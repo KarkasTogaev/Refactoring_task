@@ -1,5 +1,13 @@
 class Calculator:
+    """Simple calculator for addition and subtraction"""
+
     def add(self, a, b):
+        """Return sum of two numbers"""
+        return self._validate(a) + self._validate(b)
+
+    def sub(self, a, b):
+        """Return difference of two numbers"""
+        return self._validate(a) - self._validate(b)
         return self._validate(a) + self._validate(b)
 
     def sub(self, a, b):
