@@ -8,13 +8,22 @@ class Calculator:
     def sub(self, a, b):
         """Return difference of two numbers"""
         return self._validate(a) - self._validate(b)
+        return self._validate(a) + self._validate(b)
+
+    def sub(self, a, b):
+        return self._validate(a) - self._validate(b)
+
+    def _validate(self, value):
+        if not isinstance(value, (int, float)):
+            raise TypeError("Only numbers allowed")
+        return value
 
 def multiply(a, b):
     return a * b
 
 def divide(a, b):
     if b == 0:
-        return None
+        raise ValueError("Cannot divide by zero")
     return a / b
 
 
