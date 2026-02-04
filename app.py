@@ -1,9 +1,14 @@
 class Calculator:
     def add(self, a, b):
-        return a + b
+        return self._validate(a) + self._validate(b)
 
     def sub(self, a, b):
-        return a - b
+        return self._validate(a) - self._validate(b)
+
+    def _validate(self, value):
+        if not isinstance(value, (int, float)):
+            raise TypeError("Only numbers allowed")
+        return value
 
 def multiply(a, b):
     return a * b
